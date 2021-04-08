@@ -1,0 +1,566 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  --red: red;
+  --dark: #24292e;
+  --dark-secondary: #5e646d;
+  --light: #ffffff;
+  --light-secondary: #dfe6ec;
+  --link: #1b79e2;
+  --css: #563d7c;
+  --js: #f1e05a;
+  --success: #2ea44f;
+  --highlight: #f9826c;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 14px;
+  color: var(--dark);
+}
+
+.right {
+  width: 120px;
+  float: right;
+  display: flex;
+  justify-content: space-between;
+  margin-top: +6px;
+}
+
+nav {
+  padding: 15px 30px;
+  background-color: var(--dark);
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-link {
+  color: var(--light);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 30px;
+}
+
+.nav-link:hover {
+  transition: ease-in-out, 0.2s ease-in-out;
+  opacity: 0.8;
+}
+
+/* quick margin and padding */
+.mx-6 {
+  margin: 0 6px;
+}
+.mx-3 {
+  margin: 0 3px;
+}
+.mx-9 {
+  margin: 0 9px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+.py-6 {
+  padding: 6px 0;
+}
+
+input[type='search'] {
+  padding: 6px 12px;
+  background-color: var(--dark);
+  border: 1px solid var(--dark-secondary);
+  border-radius: 6px;
+  color: var(--light-secondary);
+  width: 260px;
+  height: 28px;
+}
+::placeholder {
+  color: var(--light-secondary);
+}
+
+.nav-search {
+  position: relative;
+  top: -2px;
+}
+
+.duo-icon {
+  display: flex;
+  align-items: center;
+}
+
+.icon-bg {
+  margin-bottom: -10px;
+  width: 32px;
+}
+
+.icon-md {
+  margin-bottom: -10px;
+  width: 20px;
+}
+
+.icon-sm {
+  width: 13px;
+}
+.icon-mm {
+  width: 8px;
+}
+
+.icon:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.profile-icon {
+  border-radius: 50px;
+  margin-top: -10px;
+  width: 20px;
+}
+
+.mobile-only {
+  display: none;
+}
+
+.pop-up {
+  width: 150px;
+  background: var(--light);
+  border: 1px solid var(--light-secondary);
+  box-sizing: border-box;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
+}
+
+.add-pop-up {
+  position: absolute;
+  right: 80px;
+  top: 47px;
+}
+.profile-pop-up {
+  position: absolute;
+  right: 30px;
+  top: 48px;
+}
+
+.pop-up-pointer {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: -6px;
+  left: 125px;
+  background: var(--light);
+  transform: rotate(-45deg);
+}
+
+.pop-up-link {
+  z-index: 2;
+  display: block;
+  line-height: 200%;
+  padding-left: 10px;
+  color: var(--dark);
+}
+.pop-link {
+  z-index: 2;
+  display: block;
+  line-height: 200%;
+  padding-left: 10px;
+  color: var(--dark);
+}
+.pop-up-link:hover {
+  z-index: 2;
+  background-color: var(--link);
+  color: var(--light);
+}
+
+.pop-disappear {
+  display: none;
+}
+
+.pop-up-screen {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background: transparent;
+}
+
+.navigator {
+  background-color: var(--light);
+  display: flex;
+  border-bottom: 1px solid var(--light-secondary);
+  position: absolute;
+  padding-left: 32%;
+  margin-top: 20px;
+}
+
+.x-scroll {
+  /* this makes the horizontal scroll possible */
+  overflow: auto;
+  white-space: nowrap;
+}
+.navigator-link {
+  line-height: 200%;
+  padding: 8px;
+  color: var(--dark);
+  opacity: 0.8;
+  border-bottom: 2px solid var(--light);
+}
+.navigator-link:hover {
+  border-bottom: 2px solid #bdbfc4;
+}
+
+.active {
+  opacity: 1;
+  font-weight: 600;
+  border-bottom: 2px solid var(--highlight);
+  cursor: pointer;
+}
+.active:hover {
+  opacity: 1;
+  font-weight: 600;
+  border-bottom: 2px solid var(--highlight);
+  cursor: pointer;
+}
+
+.badge {
+  margin-left: 10px;
+  padding: 0px 8px;
+  line-height: 180%;
+  background-color: var(--light-secondary);
+  border-radius: 15px;
+}
+
+.sticky-top {
+  /* this makes an element sticky when they reach the top = 0 */
+  position: sticky;
+  top: 0px;
+}
+
+.col-2 {
+  display: grid;
+  grid-template-columns: 25% auto;
+  grid-column-gap: 40px;
+  max-width: 1250px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+
+/* delete this afterwards */
+.element {
+  border: 1px solid var(--light-secondary);
+  border-radius: 15px;
+}
+
+.profile-col {
+  padding: 10px;
+  position: relative;
+  bottom: 60px;
+  width: 100%;
+}
+
+.profile-picture {
+  border: 1px solid #e1e5ea;
+  border-radius: 150px;
+}
+
+.front {
+  max-width: 100%;
+}
+
+.smiley {
+  padding: auto;
+  background-color: var(--light);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 1px solid var(--light-secondary);
+  display: flex;
+
+  position: absolute;
+  bottom: 270px;
+  left: 80%;
+}
+
+.btn {
+  padding: 6px 9px;
+  font-weight: 500;
+
+  background-color: #fcfcfc;
+  border: 1px solid var(--light-secondary);
+  border-radius: 5px;
+  box-shadow: 0px 1px 2px rgba(225, 229, 234, 0.5);
+  cursor: pointer;
+
+  /* width: 100%; */
+}
+
+.btn:hover {
+  background-color: #f7f7f7;
+  transition: ease-out, 0.2s ease-in-out;
+}
+
+.btn-fluid {
+  width: 100%;
+  /* padding: auto; */
+}
+
+.btn-go {
+  background-color: var(--success);
+  color: var(--light);
+  border: 1px solid #f7f7f7;
+}
+.btn-go:hover {
+  background-color: #229643;
+  transition: ease-out, 0.2s ease-in-out;
+}
+
+.ontop-all {
+  z-index: 1000000;
+}
+
+.container {
+  width: 100%;
+  margin: 0 1rem;
+}
+/*****************************************************************
+
+The repository nav Styling Starts here  
+
+*****************************************************************/
+
+.repository-nav {
+  justify-content: space-between;
+  padding: 1.2rem 2rem;
+}
+
+.repository {
+  background-color: #fafbfc;
+}
+
+.repository-name {
+  font-size: 1.2rem;
+  color: var(--link);
+}
+
+.link {
+  cursor: pointer;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.center-item {
+  display: flex;
+  align-items: center;
+}
+
+.btn-pair-left {
+  border-radius: 5px 0 0 5px !important;
+}
+.btn-pair-right {
+  position: relative;
+  right: 1px;
+  border-radius: 0 5px 5px 0 !important;
+}
+
+.highlight:hover {
+  color: var(--link);
+}
+
+.smiley > img {
+  margin: auto;
+}
+
+.profile-name {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.username {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--dark-secondary);
+}
+.text-reg {
+  margin: 12px 0px;
+}
+.front {
+  z-index: 100;
+}
+
+@media screen and (max-width: 1237px) {
+  .smiley {
+    position: absolute;
+    bottom: 300px;
+    left: 80%;
+  }
+}
+@media screen and (max-width: 915px) {
+  .smiley {
+    position: absolute;
+    bottom: 310px;
+    left: 81%;
+  }
+}
+
+/* Here's what happens when you open the page on a mobile device */
+@media screen and (max-width: 850px) {
+  nav {
+    padding-left: 10px;
+  }
+
+  .nav-link {
+    display: block;
+    margin: 0;
+  }
+
+  .right {
+    display: block;
+    width: 100%;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .tall {
+    line-height: 40px;
+  }
+
+  .div-link {
+    color: var(--light);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 30px;
+  }
+
+  input[type='search'] {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    width: 98%;
+    height: 28px;
+  }
+
+  .notification {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .brand {
+    position: relative;
+    top: -15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .menu {
+    margin-top: 8px;
+  }
+
+  .split-bottom {
+    border-bottom: 1px solid var(--dark-secondary);
+  }
+  .split-top {
+    border-top: 1px solid var(--dark-secondary);
+  }
+
+  .profile-icon {
+    margin: 0;
+    padding: 0;
+  }
+
+  .disappear {
+    display: none !important;
+  }
+
+  .navigator {
+    padding-left: 20px;
+    position: absolute;
+
+    top: 380px;
+    right: 0;
+    left: 0;
+  }
+
+  .col-2 {
+    grid-template-columns: 100%;
+    grid-row-gap: 100px;
+    padding-top: 0;
+  }
+
+  .profile-picture {
+    width: 100px;
+  }
+
+  .profile-col {
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+  }
+
+  .mobile-flex {
+    display: flex;
+    align-items: center;
+  }
+
+  .user {
+    margin-left: 20px;
+  }
+
+  .smiley {
+    background-color: var(--light);
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    display: block;
+    padding: 0;
+    padding: 5px 20px;
+    position: static;
+    margin-top: 20px;
+  }
+
+  .smiley > p {
+    display: inline;
+    padding-left: 8px;
+    font-size: 12px;
+    position: relative;
+    bottom: 2px;
+  }
+  .smiley > img {
+    display: inline;
+    margin: 0;
+  }
+
+  .repository-nav {
+    justify-content: space-between;
+    padding: 1.2rem 1rem;
+  }
+
+  .mx-1rem {
+    margin: 0.8rem 1rem;
+  }
+}
+
+/***********************************************
+
+Here's what happens when you open the page on a mobile device 
+
+*********************************************/
+@media screen and (max-width: 768px) {
+}
