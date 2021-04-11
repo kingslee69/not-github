@@ -338,6 +338,7 @@ The repository nav Styling Starts here
 
 .repository {
   background-color: #fafbfc;
+  border: 1px solid var(--light-secondary);
 }
 
 .repository-name {
@@ -390,6 +391,12 @@ The repository nav Styling Starts here
 }
 .front {
   z-index: 100;
+}
+
+/* reponsitory links */
+.repositorylinks a {
+  color: var(--dark);
+  line-height: 2000;
 }
 
 @media screen and (max-width: 1237px) {
